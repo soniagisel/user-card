@@ -1,0 +1,29 @@
+div {
+    margin-bottom: 0.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    .showPointer {
+        cursor: pointer;
+
+        &:hover {
+            .icons {
+                color: #71c6b8;
+            }
+        }
+    }
+
+    span {
+        font-size: 0.8rem;
+        font-weight: bold;
+        font-family: 'Montserrat';
+    }
+
+    .icons {
+        color: #3774a8;
+        margin-right: 0.3rem;
+        width: 1rem;
+        transition: all 0.3s ease;
+    }
+}
