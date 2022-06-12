@@ -2,7 +2,8 @@ import styles from './App.module.scss'
 import React, { useCallback, useEffect, useState } from 'react'
 import fetchUserData from './api/userApi'
 import { faMobileRetro, faUser, faEnvelope, faLock, faUnlock } from '@fortawesome/free-solid-svg-icons'
-import UserDetailsItem from './Components/UserDetailsItem'
+import UserDetailsItem from './Components/UserDetailsItem/UserDetailsItem'
+import Spinner from './Components/Spinner/Spinner'
 
 const App = () => {
     const [userData, setUserData] = useState(null)
@@ -15,7 +16,7 @@ const App = () => {
     }, [fetchNewUser])
 
     if (userData === null) {
-        return <h3>Loading Demo...</h3>
+        return <Spinner />
     }
 
     const { first, last } = userData.name
@@ -51,26 +52,29 @@ const App = () => {
                         {age}, {country}
                     </h3>
                 </section>
-                <UserDetailsItem
-                    onClickCallback={onPhoneItemClick}
-                    showPointer
-                    itemIcon={faMobileRetro}
-                    itemInfo={cell}
-                />
 
-                <UserDetailsItem
-                    onClickCallback={onEmailItemClick}
-                    showPointer
-                    itemIcon={faEnvelope}
-                    itemInfo={email}
-                />
+                <section className={styles.userDetails}>
+                    <UserDetailsItem
+                        onClickCallback={onPhoneItemClick}
+                        showPointer
+                        itemIcon={faMobileRetro}
+                        itemInfo={cell}
+                    />
 
-                <UserDetailsItem itemIcon={faUser} itemInfo={username} />
+                    <UserDetailsItem
+                        onClickCallback={onEmailItemClick}
+                        showPointer
+                        itemIcon={faEnvelope}
+                        itemInfo={email}
+                    />
 
-                <UserDetailsItem
-                    itemIcon={isPasswordVisible ? faUnlock : faLock}
-                    itemInfo={isPasswordVisible ? password : '∗'.repeat(password.length)}
-                />
+                    <UserDetailsItem itemIcon={faUser} itemInfo={username} />
+
+                    <UserDetailsItem
+                        itemIcon={isPasswordVisible ? faUnlock : faLock}
+                        itemInfo={isPasswordVisible ? password : '∗'.repeat(password.length)}
+                    />
+                </section>
 
                 <section className={styles.buttonsSection}>
                     <button onClick={refreshCard}>Fetch New User</button>
