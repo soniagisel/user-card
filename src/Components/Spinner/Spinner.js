@@ -6,7 +6,7 @@ import styles from './Spinner.module.scss'
 const Spinner = () => {
     return (
         <div className={styles.spinner}>
-            <FontAwesomeIcon color='white' size='6x' icon={faSync} spin />)
+            <FontAwesomeIcon color='white' size='6x' icon={faSync} spin />
         </div>
     )
 }
