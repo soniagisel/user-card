@@ -4,7 +4,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
 
-    .showPointer {
+    &.showPointer {
         cursor: pointer;
 
         &:hover {
