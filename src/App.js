@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import UserCard from './Components/UserCard/UserCard'
 import styles from './App.module.scss'
 import { useGetUserQuery } from './services/user-service'
@@ -9,6 +9,12 @@ import ErrorMessage from './Components/ErrorMessage/ErrorMessage'
 const App = () => {
     const { refetch, isFetching, isLoading, error } = useGetUserQuery()
     const [isPasswordVisible, setIsPasswordVisible] = useState(false)
+
+    useEffect(() => {
+        if (isFetching) {
+            setIsPasswordVisible(false)
+        }
+    }, [isFetching])
 
     if (error) {
         return <ErrorMessage />
