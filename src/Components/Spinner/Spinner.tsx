@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleNotch } from '@fortawesome/free-solid-svg-icons'
 import styles from './Spinner.module.scss'
 
-const Spinner = () => {
+const Spinner: React.FC = () => {
     return (
         <div className={styles.spinner}>
             <FontAwesomeIcon color='white' size='4x' icon={faCircleNotch} spin />

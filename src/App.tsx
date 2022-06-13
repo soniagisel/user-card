@@ -6,8 +6,8 @@ import CardSpinner from './Components/CardSpinner/CardSpinner'
 import Spinner from './Components/Spinner/Spinner'
 import ErrorMessage from './Components/ErrorMessage/ErrorMessage'
 
-const App = () => {
-    const { refetch, isFetching, isLoading, error } = useGetUserQuery()
+const App: React.FC = () => {
+    const { refetch, isFetching, isLoading, error, data, isSuccess } = useGetUserQuery()
     const [isPasswordVisible, setIsPasswordVisible] = useState(false)
 
     useEffect(() => {
@@ -32,7 +32,11 @@ const App = () => {
         <div className={styles.container}>
             <div className={styles.cardContainer}>
                 <section className={styles.userInfoContainer}>
-                    {isFetching ? <CardSpinner /> : <UserCard isPasswordVisible={isPasswordVisible} />}
+                    {isFetching ? (
+                        <CardSpinner />
+                    ) : (
+                        isSuccess && data && <UserCard isPasswordVisible={isPasswordVisible} data={data} />
+                    )}
                 </section>
                 <section className={styles.buttonsSection}>
                     <button onClick={refetch} disabled={isFetching}>
