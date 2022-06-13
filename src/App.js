@@ -4,6 +4,7 @@ import fetchUserData from './api/userApi'
 import { faMobileRetro, faUser, faEnvelope, faLock, faUnlock } from '@fortawesome/free-solid-svg-icons'
 import UserDetailsItem from './Components/UserDetailsItem/UserDetailsItem'
 import Spinner from './Components/Spinner/Spinner'
+import debounce from './utils/debounce'
 
 const App = () => {
     const [userData, setUserData] = useState(null)
@@ -27,10 +28,10 @@ const App = () => {
     const { country } = userData.location
     const cell = userData.cell
 
-    const refreshCard = async () => {
+    const refreshCard = debounce(async () => {
         await fetchNewUser()
         setIsPasswordVisible(false)
-    }
+    }, 300)
 
     const togglePasswordVisivility = () => {
         setIsPasswordVisible(!isPasswordVisible)
