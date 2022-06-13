@@ -4,30 +4,19 @@ import styles from './App.module.scss'
 import { useGetUserQuery } from './services/user-service'
 import CardSpinner from './Components/CardSpinner/CardSpinner'
 import Spinner from './Components/Spinner/Spinner'
+import ErrorMessage from './Components/ErrorMessage/ErrorMessage'
 
 const App = () => {
     const { refetch, isFetching, isLoading, error } = useGetUserQuery()
     const [isPasswordVisible, setIsPasswordVisible] = useState(false)
 
-    if (isLoading) return <Spinner />
+    if (error) {
+        return <ErrorMessage />
+    }
 
-    if (error)
-        return (
-            <div>
-                <p>
-                    We found an error, please{' '}
-                    <a
-                        href='#/'
-                        onClick={(event) => {
-                            event.preventDefault()
-                            refetch()
-                        }}
-                    >
-                        try again
-                    </a>
-                </p>
-            </div>
-        )
+    if (isLoading) {
+        return <Spinner />
+    }
 
     const togglePasswordVisivility = () => {
         setIsPasswordVisible(!isPasswordVisible)
