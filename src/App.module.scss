@@ -17,63 +17,30 @@
         animation-name: cardSlide;
         animation-duration: 1.5s;
         animation-fill-mode: forwards;
+    }
 
-        .personalInfo {
-            text-align: center;
-            margin: 1rem 1rem 2rem 1rem;
-            color: #5e5e5e;
+    .userInfoContainer {
+        height: 25rem;
+    }
 
-            h2 {
-                font-family: 'Crete Round';
-                line-height: 2rem;
-                margin: 0;
-                font-size: 1.3rem;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
+    .buttonsSection {
+        button {
+            border-radius: 0.3rem;
+            border-color: transparent;
+            padding: 0.4rem;
+            cursor: pointer;
+            background-color: #74adde;
+            color: white;
+            transition: all 0.3s ease;
+            font-family: 'Crete Round';
+            font-size: 1rem;
+
+            &:hover {
+                background-color: #71c6b8;
             }
 
-            h3 {
-                font-family: 'Montserrat';
-                margin: 0;
-                font-size: 0.9rem;
-            }
-        }
-
-        img {
-            display: block;
-            margin: auto;
-            border-radius: 100%;
-            width: 10rem;
-        }
-
-        .userDetails {
-            margin-bottom: 2rem;
-        }
-
-        .buttonsSection {
-            bottom: 45px;
-            position: absolute;
-
-            button {
-                border-radius: 0.3rem;
-                border-color: transparent;
-                padding: 0.4rem;
-                cursor: pointer;
-                width: 8.5rem;
-                background-color: #74adde;
-                color: white;
-                transition: all 0.3s ease;
-                font-family: 'Crete Round';
-                font-size: 1rem;
-
-                &:hover {
-                    background-color: #71c6b8;
-                }
-
-                &:first-child {
-                    margin-right: 0.5rem;
-                }
+            &:first-child {
+                margin-right: 0.5rem;
             }
         }
     }
