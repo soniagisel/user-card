@@ -9,7 +9,6 @@
     .cardContainer {
         border-radius: 0.5rem;
         background-color: white;
-        padding: 2rem;
         height: 32rem;
         width: 21rem;
         box-sizing: border-box;
@@ -17,17 +16,27 @@
         animation-name: cardSlide;
         animation-duration: 1.5s;
         animation-fill-mode: forwards;
+
+        @media (max-width: 352px) {
+            height: 90vh;
+        }
     }
 
     .userInfoContainer {
         height: 25rem;
+        padding: 2rem 2rem 0 2rem;
     }
 
     .buttonsSection {
+        display: flex;
+        justify-content: space-evenly;
+        padding: 0 1rem 0 1rem;
+
         button {
             border-radius: 0.3rem;
             border-color: transparent;
             padding: 0.4rem;
+            width: 8.5rem;
             cursor: pointer;
             background-color: #74adde;
             color: white;
@@ -35,13 +44,25 @@
             font-family: 'Crete Round';
             font-size: 1rem;
 
+            @media (max-width: 352px) {
+                width: 100%;
+                margin-bottom: 0.5rem;
+            }
+
             &:hover {
                 background-color: #71c6b8;
             }
 
-            &:first-child {
-                margin-right: 0.5rem;
+            &:disabled {
+                background-color: #b7d3ec;
+                pointer-events: all;
+                cursor: progress;
             }
+        }
+
+        @media (max-width: 352px) {
+            display: block;
+            text-align: center;
         }
     }
 }

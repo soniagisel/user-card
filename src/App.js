@@ -15,7 +15,7 @@ const App = () => {
         return (
             <div>
                 <p>
-                    We found an error, please
+                    We found an error, please{' '}
                     <a
                         href='#/'
                         onClick={(event) => {
@@ -42,7 +42,9 @@ const App = () => {
                     <button onClick={refetch} disabled={isFetching}>
                         Fetch New User
                     </button>
-                    <button onClick={togglePasswordVisivility}>{isPasswordVisible ? 'Hide' : 'Reveal'} Password</button>
+                    <button onClick={togglePasswordVisivility} disabled={isFetching}>
+                        {isPasswordVisible ? 'Hide' : 'Reveal'} Password
+                    </button>
                 </section>
             </div>
         </div>
