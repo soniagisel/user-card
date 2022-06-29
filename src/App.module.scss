@@ -9,66 +9,69 @@
     .cardContainer {
         border-radius: 0.5rem;
         background-color: white;
-        padding: 2rem;
-        height: 31rem;
+        height: 32rem;
         width: 21rem;
         box-sizing: border-box;
         box-shadow: 0px 15px 30px -10px #417e6b;
-        position: relative;
+        animation-name: cardSlide;
+        animation-duration: 1.5s;
+        animation-fill-mode: forwards;
 
-        .personalInfo {
-            text-align: center;
-            margin: 1rem 1rem 2.5rem 1rem;
-            color: #5e5e5e;
+        @media (max-width: 352px) {
+            height: 90vh;
+        }
+    }
 
-            h2 {
-                font-family: 'Crete Round';
-                line-height: 2rem;
-                margin: 0;
-                font-size: 1.3rem;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
+    .userInfoContainer {
+        height: 25rem;
+        padding: 2rem 2rem 0 2rem;
+    }
+
+    .buttonsSection {
+        display: flex;
+        justify-content: space-evenly;
+        padding: 0 1rem 0 1rem;
+
+        button {
+            border-radius: 0.3rem;
+            border-color: transparent;
+            padding: 0.4rem;
+            width: 8.5rem;
+            cursor: pointer;
+            background-color: #74adde;
+            color: white;
+            transition: all 0.3s ease;
+            font-family: 'Crete Round';
+            font-size: 1rem;
+
+            @media (max-width: 352px) {
+                width: 100%;
+                margin-bottom: 0.5rem;
             }
 
-            h3 {
-                font-family: 'Montserrat';
-                margin: 0;
-                font-size: 0.9rem;
+            &:hover {
+                background-color: #71c6b8;
+            }
+
+            &:disabled {
+                background-color: #b7d3ec;
+                pointer-events: all;
+                cursor: default;
             }
         }
 
-        img {
+        @media (max-width: 352px) {
             display: block;
-            margin: auto;
-            border-radius: 100%;
-            width: 10rem;
+            text-align: center;
         }
+    }
+}
 
-        .buttonsSection {
-            bottom: 45px;
-            position: absolute;
-
-            button {
-                border-radius: 0.3rem;
-                border-color: transparent;
-                padding: 0.3rem 0.5rem;
-                cursor: pointer;
-                width: 8rem;
-                background-color: #74adde;
-                color: white;
-                transition: all 0.3s ease;
-                font-family: 'Crete Round';
-                letter-spacing: 0.01rem;
-
-                &:hover {
-                    background-color: #71c6b8;
-                }
-
-                &:first-child {
-                    margin-right: 0.5rem;
-                }
-            }
-        }
+@keyframes cardSlide {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
     }
 }
