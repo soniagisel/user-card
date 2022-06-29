@@ -1,4 +1,3 @@
-import React from 'react'
 import styles from './ErrorMessage.module.scss'
 import { useGetUserQuery } from '../../services/user-service'
 
