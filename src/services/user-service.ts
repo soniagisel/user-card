@@ -38,13 +38,7 @@ export const userApi = createApi({
         getUser: builder.query<User, void>({
             query: () => `https://randomuser.me/api/`,
 
-            transformResponse: (
-                response: {
-                    results: UserDataResponse[]
-                },
-                meta,
-                arg,
-            ) => {
+            transformResponse: (response: { results: UserDataResponse[] }) => {
                 return {
                     firstName: response.results[0].name.first,
                     lastName: response.results[0].name.last,
