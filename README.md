@@ -1,6 +1,6 @@
 # Dynamic User Card
 
-<img src="./src/assets/images/user-card-img.png" alt="Image of the user card app" width="200"/>
+<img src="./src/assets/images/user-card-img.png" alt="Image of the user card app" width="500"/>
 
 I took a technical test for an interview as a base to build this simple project with a card component that displays user's basic info fetched from a public API.
 
