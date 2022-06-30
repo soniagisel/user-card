@@ -1,6 +1,6 @@
 # Dynamic User Card
 
-![Image of the user card app](https://github.com/soniagisel/user-card/blob/add-photo-to-readme/assets/images/user-card-img.png)
+![Image of the user card app](./src/assets/images/user-card-img.png)
 
 I took a technical test for an interview as a base to build this simple project with a card component that displays user's basic info fetched from a public API.
 
