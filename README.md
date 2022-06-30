@@ -1,5 +1,7 @@
 # Dynamic User Card
 
+<img src="./src/assets/images/user-card-img.png" alt="Image of the user card app" width="500"/>
+
 I took a technical test for an interview as a base to build this simple project with a card component that displays user's basic info fetched from a public API.
 
 ## Live Demo
@@ -21,9 +23,9 @@ If the API fails the card won't show up and instead an error message will appear
 
 When the app is loading it'll show a spinner as well as when it's fetching another user, but it might be barely noticeable while using WiFi.
 
-I suggest that, to play a little more with the app, you can set the `Network` to use `Slow 3G`. If so, you'll also notice that both buttons are blocked when fething another user and unblocked when all the data is available.
+> I suggest that, to play a little more with the app, you can set the `Network` to use `Slow 3G`. If so, you'll also notice that both buttons are blocked when fething another user and unblocked when all the data is available.
 
-##### The information displayed is the folowing:
+### The information displayed is the folowing:
 - Profile Picture
 - Age and Country
 - Email: you can click on it and it'll allow you to send an email to that address right away.
@@ -47,7 +49,7 @@ I suggest that, to play a little more with the app, you can set the `Network` to
 - Public RESTful API
 
 
-##### How I chose the technologies
+### How I chose the technologies
 
 `Create React App` and the `public API` where a requirement for the test, but I got the freedom to choose the other technologies, some of them added after the challenge.
 
@@ -71,6 +73,6 @@ The last new challenge was with GitHub Pages as I decided to deploy the project 
 ## How to Install and Run the User Card Project
 
 1. Download or fork the project to your local workspace.
-2. From the project root run `npm install`
+2. From the project's root folder run `npm install`
 3. Run `npm start` and after a few secs you should see the app running right away in your browser.
 4. Have fun!
