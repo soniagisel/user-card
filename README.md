@@ -73,6 +73,6 @@ The last new challenge was with GitHub Pages as I decided to deploy the project 
 ## How to Install and Run the User Card Project
 
 1. Download or fork the project to your local workspace.
-2. From the project root run `npm install`
+2. From the project's root folder run `npm install`
 3. Run `npm start` and after a few secs you should see the app running right away in your browser.
 4. Have fun!
